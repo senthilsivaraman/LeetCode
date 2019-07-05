@@ -36,9 +36,24 @@ class MajorityElement
     
     public static void Main()
     {
-        int [] array1 = new int[]{1,1,1,2,2,3,3,3,3,3,3,3,3};
         Console.WriteLine("Finding the Majority element in an array");
-        findMajority(array1);
+        Console.WriteLine("User options \n1. Use system defined array \n2. User Input - - - Enter your choice")
+        int choice = Convert.ToInt32(Console.ReadLine());
+        if(choice == 1)
+        {
+         int [] array1 = new int[]{1,1,1,2,2,3,3,3,3,3,3,3,3};
+         findMajority(array1);   
+        }
+        else
+        {
+            Console.ReadLine("Enter your array size");
+            int arr2Size = Convert.ToInt32(Console.ReadLine());
+            int[] array2 = new int[arr2Size]; //We cant initialize an array without marking size
+            for(int i = 0; i < arr2Size; i++)
+            {
+                array2[i] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
         
     }
 }
