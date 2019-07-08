@@ -1,0 +1,30 @@
+using System;
+
+class FindDuplicatesInArray
+{
+    static void FindDuplicate(int [] arr)
+    {
+        Console.WriteLine("Finding the duplicate elements in the array");
+        int i = 0;
+        
+        if(arr.Length == 0)
+        {
+            Console.WriteLine("Array is Empty");
+        }
+        else
+        {
+            for( i = 0 ; i < arr.Length ; i++ )
+            {
+                if (arr[Math.Abs(arr[i])] >= 0) 
+                    arr[Math.Abs(arr[i])] = -arr[Math.Abs(arr[i])];
+                else
+                    Console.WriteLine(Math.Abs(arr[i]));
+            }
+        }
+    }
+    public static void Main()
+    {
+        int[] arr = new int [] {1,2,3,4,4,5,5};
+        FindDuplicate(arr);
+    }
+}
