@@ -1,0 +1,55 @@
+using System;
+using System.Linq;
+
+class FirstMissSmallPositive
+{
+    static int findmiss(int [] temp)
+    {
+        int max = temp.Max();
+        int i = 0;
+        
+            //Constraints from Value
+            if(max < 1)
+            {
+                return 1;   
+            }
+                
+            //Constraints from Size of Array
+            if(temp.Length == 1)
+            {
+                return (temp[0]+1);
+            }
+        
+            int[] temp2 = new int[max];
+            
+            for ( i = 0; i < temp.Length; i++)
+            {
+                if(temp[i] > 0)
+                {
+                    if(temp2[temp[i] - 1] != 1)
+                    {
+                        temp2[temp[i] - 1] = 1;
+                    }    
+                }
+               
+            }
+            
+            for( i = 0; i < temp2.Length; i++)
+            {
+                if(temp2[i] == 0)
+                    return i + 1;
+            }
+        return i + 1;
+        
+    }
+    public static void Main()
+    {
+        int[] arr = new int[]{6, -4, 0 , -1, 2, 5};
+        if(arr.Length == 0)
+        {
+            Console.WriteLine("Array is empty");
+        }
+        else
+            Console.WriteLine("The Missing Number : " + findmiss(arr));
+    }
+}
