@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+class MajorityElement
+{
+    static void findDuplicate(int[] arr)
+    {
+        
+        Dictionary<int, int> myDict = new Dictionary<int, int>();
+        int count = 0;
+       
+        for(int i = 0 ; i < arr.Length ; i++)
+        {
+            if(myDict.ContainsKey(arr[i]))
+            {
+                count = myDict[arr[i]] + 1;
+                 myDict[arr[i]] = count;
+            }
+             
+            else
+                myDict[arr[i]] = 1;
+            
+        }
+        
+        foreach(KeyValuePair<int, int> obj in myDict)
+        {
+            if(obj.Value>1)
+                Console.WriteLine(obj.Key);
+        }
+        
+    }
+    
+    public static void Main()
+    {
+        Console.WriteLine("Finding the Duplicate element in an array");
+        
+         int [] array1 = new int[]{1,2,2,3,3,3,3,3,3,3,3,5,5};
+         findDuplicate(array1);   
+        
+        
+        
+    }
+}
