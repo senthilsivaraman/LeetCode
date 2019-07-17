@@ -1,0 +1,20 @@
+
+using System;
+
+class ReverseSentence 
+
+{
+    
+  static string reverseSentence(string s)
+  {
+      string[] splitWords = s.Split(' ');
+      Array.Reverse(splitWords);
+      return string.Join(" ", splitWords);
+  }
+  static void Main()
+  {
+    Console.WriteLine("We are reversing the sentence here by words");
+    string s1 = "Hello World I am Senthil";
+    Console.WriteLine("After Reversal : " + reverseSentence(s1));
+  }
+}
