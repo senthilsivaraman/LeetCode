@@ -18,7 +18,18 @@ class StringReversal
           
          str = new string(charArray);
          return str;
+    
+                           /******     //Another Method using Array.Reverse
+                                 static String strReversal(string str)
+                                        {
+                                            char[] charArray = str.ToCharArray();
+                                            Array.Reverse(charArray);
+                                            return new string(charArray);
+                                        }
+                            ***********/
+    
     }
+    
   
   
    static void Main() 
