@@ -1,0 +1,30 @@
+using System;
+
+
+class StringReversal 
+{
+    static String strReversal(string str)
+    {
+        char[] charArray = str.ToCharArray();
+        int i;
+        int n = str.Length;
+        for(i = 0 ; i < n / 2 ; i++)
+        {
+             char temp = charArray[i];
+            charArray[i] = charArray[n - i -1];
+            charArray[n - i - 1] = temp; 
+            
+        }
+          
+         str = new string(charArray);
+         return str;
+    }
+  
+  
+   static void Main() 
+    {
+        Console.WriteLine("String Reversal");
+        string str = "Senthil kumar";
+        Console.WriteLine("The reversed string is " + strReversal(str));
+    }
+}
